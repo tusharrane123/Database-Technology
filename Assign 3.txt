@@ -1,0 +1,13 @@
+Assignment –3
+
+Overview of SQL.
+
+1) Does ANSI recognize the data type DATE?
+
+Ans :- Yes.YYYY-MM-DD
+
+
+2) Which subdivision of SQL is used to put values in tables?
+
+Ans :- insert into values
+

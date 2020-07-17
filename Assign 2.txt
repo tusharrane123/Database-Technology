@@ -1,0 +1,13 @@
+1)which field of the customers table is primary key?
+-> cnum
+
+2)what is the 4th column in customer table?
+-> rating
+
+3)what is another name for row? for column?
+-> another name for row is tuple
+   another name for column is attribute
+
+4)why isn't it possible to see the first five rows of a table?
+->No its not possible because in RDBMS row is stored where ever memory is available and hence while retrieving 
+	rows are displayed as per their address in ascending order. 
