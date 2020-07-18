@@ -27,20 +27,14 @@ where snum IN
        OR sname='Motika');
 ------------------------------------------------------
 3) Write a query that will produce all the customers whose names begin with a letter
-from ‘A’ to ‘G’.
+from â€˜Aâ€™ to â€˜Gâ€™.
 -->
 Select *
 from customers
-where cname LIKE 'a%'
-  OR cname LIKE 'b%'
-  OR cname LIKE 'C%'
-  OR cname LIKE 'D%'
-  OR cname LIKE 'E%'
-  OR cname LIKE 'F%'
-  OR cname LIKE 'G%' ;
+where cname >='A' and cname<'H';
 
 ------------------------------------------------------
-4) Write a query that selects all customers whose names begin with the letter ‘C’.
+4) Write a query that selects all customers whose names begin with the letter â€˜Câ€™.
 -->
 Select *
 from customers
