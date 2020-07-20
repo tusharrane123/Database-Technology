@@ -1,0 +1,30 @@
+1. Display all the Supplier names with the initial letter capital.
+ans-- select concat(upper(substr(sname,1,1)),lower(substr(sname,2)))as sname from s;
+
+
+2. Display all the Supplier names in upper case.
+ans- select UPPER(sname) from s;
+
+
+3. Display all the Supplier names in lower case.
+ans- select lower(sname) from s;
+
+
+4. Display all the Supplier names padded to 25 characters, with spaces on the left.
+ans- select lpad(sname,25,' ') from s;
+
+
+5. Display all the Supplier names (with ‘la’ replaced by ‘ro’).
+ans- select replace(sname,'la','ro') from s;
+
+
+6. Implement the above command such that ‘l’ is replaced with ‘r’ and ‘a’ is replaced with ‘o’.
+ans- select replace(replace(sname,'l','r'),'a','o') from s;
+ 
+
+7. Display the Supplier names and the lengths of the names.
+ans- select sname,length(sname) from s;
+
+
+8. Use the soundex function to search for a supplier by the name of ‘BLOKE’.
+ans- select * from s where soundex(sname)=soundex('blockk');
