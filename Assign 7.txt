@@ -1,0 +1,64 @@
+Assignment –7
+Name-Tushar rane
+Roll-200240520109
+
+Summarizing Data with Aggregate Functions.
+
+1) Write a query that counts all orders for October 3.
+-->select count(onum) total_order from orders where odate like '03-OCT-%';
+============================================================================================================================================================
+
+2) Write a query that counts the number of different non-NULL city values in the
+Customers table.
+
+-->select count(cname) empty_city from customers where cname is not NULL;
+
+EMPTY_CITY
+==================================================================================================================================================================
+
+3) Write a query that selects each customer’s smallest order.
+-->select min(amt) ) "smallest order", cnum from orders GROUP BY cnum;
+
+MIN(AMT)    CNUM
+
+767.19     2001
+4723     2006
+1900.1     2007
+5160.45    2003
+75.75     2004
+18.69     2008
+1713.23    2002
+
+7 rows selected.
+==========================================================================================================================================================================================
+
+4) Write a query that selects the first customer, in alphabetical order, whose name
+begins with G.
+-->select * from customers where cname like 'G%'ORDER BY cname;
+
+CNUM    CNAME     CITY     RATING
+
+2002    Giovanni    Rome     200     1003
+2004    Grass     Berlin     300     1002
+
+2 rows selected.
+
+==============================================================================================================================================================================================================================================================
+5) Write a query that selects the highest rating in each city.
+-->select max(rating) "highest rating" from customers;
+
+highest rating
+
+300
+===========================================================================================================================================================================
+
+6) Write a query that counts the number of salespeople registering orders for each
+day. (If a salesperson has more than one order on a given day, he or she should be
+counted only once.).
+-->select count(odate)||' SALES PERSON REGISTREDDON' "total",odate from orders GROUP BY odate;
+
+TOTAL            ODATE
+2 SALES PERSON REGISTREDD ON      04-OCT-90
+1 SALES PERSON REGISTREDD ON      05-OCT-90
+5 SALES PERSON REGISTREDD ON      03-OCT-90
+2 SALES PERSON REGISTREDD ON      06-OCT-90

@@ -1,0 +1,71 @@
+Assignment –8
+Name-Tushar rane.
+Roll-200240520109
+
+Formatting Query output.
+
+1) Assume each salesperson has a 12% commission. Write a query on the orders
+table that will produce the order number, the salesperson number, and the amount
+of the salesperson’s commission for that order.
+-->select onum, snum,amt,(amt*12)/100 commision from orders;
+
+ONUM   SNUM   AMT    COMMISION
+
+3001   1007   18.69    2.2428
+3003   1001  767.19    92.0628
+3002   1004   1900.1    228.012
+3005   1002   5160.45   619.254
+3006   1007   1098.16   131.7792
+3009   1003   1713.23   205.5876
+3007   1002   75.75    9.09
+3008   1001   4723    566.76
+3010   1002    1309.95    157.194
+3011    1001    9891.88    1187.0256
+
+10 rows selected.
+==============================================================================================================================================================
+2) Write a query on the Customers table that will find the highest rating in each city.
+Put the output in this form:
+
+For the city (city), the highest rating is : (rating).
+-->select onum,snum,amt,(amt*12)/100 commision from orders;
+
+ONUM    SNUM    AMT     COMMISION
+
+3001    1007    18.69     2.2428
+3003    1001    767.19     92.0628
+3002    1004    1900.1     228.012
+3005    1002    5160.45    619.254
+3006    1007    1098.16    131.7792
+3009    1003    1713.23    205.5876
+3007    1002    75.75     9.09    
+3008    1001    4723     566.76
+3010    1002    1309.95    157.194
+3011    1001    9891.88    1187.0256
+
+10 rows selected.
+============================================================================================================================================================
+3) Write a query that lists customers in descending order of rating. Output the rating
+field first, followed by the customer’s name and number.
+-->select rating, cname,snum from customers order by rating desc;
+
+RATING    CNAME     SNUM
+
+300    grass     1002
+300    cisneros    1007
+200    giovanni    1003
+100    pereira    1004
+100    clemens    1001
+100    hoffman    1000
+
+==================================================================================================================================================================
+4) Write a query that totals the orders for each day and places the results in
+descending order.
+-->select count(odate) "total orders",odate from orders group by odate order by "total orders";
+
+TOTAL   ORDERS ODATE
+
+1    05-OCT-90
+2    06-OCT-90
+2  04-OCT-90
+5  03-OCT-90
