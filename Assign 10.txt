@@ -1,0 +1,24 @@
+Assignment – 10
+Name-Tushar Rane
+Roll-200240520109
+
+1) Write a query that produces all pairs of salespeople who are living in the same city.
+Exclude combinations of salespeople with themselves as well as duplicate rows with
+the order reversed.
+-->select m.sname, n.sname, m.city from salespeople m, salespeople n where m.city=n.city and m.sname <n .sname;
+
+SNAME    SNAME    CITY
+
+Motika    peel    london
+============================================================================================================================================================
+
+2) Write a query that produces the names and cities of all customers with the same rating
+as Hoffman.
+-->select cname,city from customers where rating = (SELECT rating  from customers where cname='hoffman');
+
+CNAME     CITY
+
+hoffman    london
+clemens    london
+pereira    rome
+===============================================================================================================================================================
