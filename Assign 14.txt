@@ -1,0 +1,15 @@
+﻿Assignment 14
+Name -Tushar Rane.
+
+1) Write a command that puts the following values, in their given order, into the salespeople table:
+	city – San Jose, name – Blanco, comm – NULL, cnum – 1100.
+ANS: insert into salesperson(city,sname,comm,snum) values('San Jose','Blanco',NULL,1100);
+============================================================================================================================================================
+2) Write a command that removes all orders from customer Clemens from the Orders table.
+ANS: delete from orders where cnum= (select cnum from customers where cname= 'Clemens');
+============================================================================================================================================================
+3) Write a command that increases the rating of all customers in Rome by 100.
+ANS: update customers set rating=(rating + 100) where city='Rome';
+============================================================================================================================================================
+4) Salesperson Serres has left the company. Assign her customers to Motika.
+ANS: update customers set snum=(select snum from salesperson where sname='motika') where snum=(select snum from salesperson where sname='serres');
