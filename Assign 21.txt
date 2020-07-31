@@ -1,0 +1,38 @@
+ASSIGNMENT NO:-21
+Name-Tushar Rane.
+============================================================================================================================================================
+1) Give Amit the right to change the ratings of the customers.
+
+->grant update on customers to Amit
+===========================================================================================================================================================
+2) Give Manoj the right to give other users the right to query the Orders table.
+
+->grant select on orders TO Manoj with grant option;
+
+  grant select on Manoj.orders to Seema;
+===========================================================================================================================================================
+3) Take the INSERT privilege on Salespeople away from Ajita.
+
+->revoke insert on salespeople from Ajita;
+============================================================================================================================================================
+4) Grant Abhijeet the right to insert or update the Customers table while keeping her
+possible rating values in the range of 100 to 500.
+
+->CREATE OR REPLACE VIEW RANGE AS
+	SELECT * FROM customers
+	WHERE rating BETWEEN 100 AND 500;
+
+->GRANT UPDATE ON range100 TO Abhijeet;
+============================================================================================================================================================
+
+5) Allow Vikram to query the Customers table, but restrict his access to those
+customers whose rating is the lowest.
+
+->CREATE OR REPLACE VIEW RESTRICTMIN AS
+	SELECT * FROM customers
+	WHERE rating NOT IN
+    	(SELECT min(rating) FROM customers);
+
+-> GRANT SELECT ON RESTRICTMIN TO Vikaram;
+
+==========================================================================================================================================================
